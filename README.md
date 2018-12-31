@@ -1,3 +1,5 @@
+[![Curso Android Avanzado](banner_git.png)](http://www.udemy.com/)
+
 # Android App: Curso Avanzado
 Repositorio del curso de Udemy sobre Android App Avanzado.
 
