@@ -10,9 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.udemyandroid.recyclerview.dummy.DummyContent;
-import com.udemyandroid.recyclerview.dummy.DummyContent.DummyItem;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,9 +59,8 @@ public class RestauranteFragment extends Fragment {
 
             // Lista de elementos (Restaurantes)
             restauranteList = new ArrayList<>();
-            restauranteList.add(new Restaurante("Pizzeria Carlos", "", 4.0f, "Madrid, España"));
-            restauranteList.add(new Restaurante("Hamburguesería rápida", "", 4.0f, "México DF"));
-
+            restauranteList.add(new Restaurante("Pizzeria Carlos", "https://www.cadenadial.com/wp-content/uploads/2015/07/pizza1.jpg", 4.0f, "Madrid, España"));
+            restauranteList.add(new Restaurante("Hamburguesería rápida", "https://moadrupalweb.blob.core.windows.net/moadrupalweb/original/5571_BurgerKing_HeroImage.jpg", 4.0f, "México DF"));
 
 
             // Asociamos el adaptador al RecyclerView
@@ -104,6 +100,6 @@ public class RestauranteFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Restaurante item);
     }
 }

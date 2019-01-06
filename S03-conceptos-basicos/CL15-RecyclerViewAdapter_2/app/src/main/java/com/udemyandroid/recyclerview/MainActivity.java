@@ -3,8 +3,6 @@ package com.udemyandroid.recyclerview;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.udemyandroid.recyclerview.dummy.DummyContent;
-
 public class MainActivity extends AppCompatActivity implements RestauranteFragment.OnListFragmentInteractionListener {
 
     @Override
@@ -14,7 +12,7 @@ public class MainActivity extends AppCompatActivity implements RestauranteFragme
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(Restaurante item) {
 
     }
 }

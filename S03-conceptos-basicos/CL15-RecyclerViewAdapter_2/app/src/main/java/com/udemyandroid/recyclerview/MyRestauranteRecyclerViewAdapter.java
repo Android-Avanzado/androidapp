@@ -4,18 +4,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.udemyandroid.recyclerview.RestauranteFragment.OnListFragmentInteractionListener;
-import com.udemyandroid.recyclerview.dummy.DummyContent.DummyItem;
-
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyRestauranteRecyclerViewAdapter extends RecyclerView.Adapter<MyRestauranteRecyclerViewAdapter.ViewHolder> {
 
     private final List<Restaurante> mValues;
@@ -35,9 +31,17 @@ public class MyRestauranteRecyclerViewAdapter extends RecyclerView.Adapter<MyRes
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        // Rescatamos los datos del elemento que ocupa la posición "position"
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+
+        holder.textViewNombreRestaurante.setText(holder.mItem.getNombre());
+        holder.textViewDireccionRestaurante.setText(holder.mItem.getDireccion());
+        holder.ratingBarValoracionRestaurante.setRating(holder.mItem.getValoracion());
+
+        Picasso.get()
+                .load(holder.mItem.getUrlPhoto())
+                .into(holder.imageViewPhotoRestaurante);
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,20 +62,24 @@ public class MyRestauranteRecyclerViewAdapter extends RecyclerView.Adapter<MyRes
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final TextView textViewNombreRestaurante;
+        public final TextView textViewDireccionRestaurante;
+        public final ImageView imageViewPhotoRestaurante;
+        public final RatingBar ratingBarValoracionRestaurante;
         public Restaurante mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            textViewNombreRestaurante = view.findViewById(R.id.textViewNombre);
+            textViewDireccionRestaurante = view.findViewById(R.id.textViewDireccion);
+            imageViewPhotoRestaurante = view.findViewById(R.id.imageViewPhoto);
+            ratingBarValoracionRestaurante = view.findViewById(R.id.ratingBarValoracion);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + textViewNombreRestaurante.getText() + "'";
         }
     }
 }
