@@ -1,0 +1,19 @@
+package com.androidavanzado.cl05_minitwitter.retrofit;
+
+import com.androidavanzado.cl05_minitwitter.RequestLogin;
+import com.androidavanzado.cl05_minitwitter.RequestSignup;
+import com.androidavanzado.cl05_minitwitter.ResponseAuth;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
+
+public interface MiniTwitterService {
+
+    @POST("/auth/login")
+    Call<ResponseAuth> doLogin(@Body RequestLogin requestLogin);
+
+    @POST("/auth/signup")
+    Call<ResponseAuth> doSignUp(@Body RequestSignup requestSignup);
+
+}
