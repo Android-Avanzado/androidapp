@@ -96,9 +96,25 @@ public class TweetListFragment extends Fragment {
     }
 
     private void loadNewFavData() {
+        tweetViewModel.getNewFavTweets().observe(getActivity(), new Observer<List<Tweet>>() {
+            @Override
+            public void onChanged(@Nullable List<Tweet> tweets) {
+                tweetList = tweets;
+                swipeRefreshLayout.setRefreshing(false);
+                adapter.setData(tweetList);
+                tweetViewModel.getNewFavTweets().removeObserver(this);
+            }
+        });
     }
 
     private void loadFavTweetData() {
+        tweetViewModel.getFavTweets().observe(getActivity(), new Observer<List<Tweet>>() {
+            @Override
+            public void onChanged(@Nullable List<Tweet> tweets) {
+                tweetList = tweets;
+                adapter.setData(tweetList);
+            }
+        });
     }
 
 
