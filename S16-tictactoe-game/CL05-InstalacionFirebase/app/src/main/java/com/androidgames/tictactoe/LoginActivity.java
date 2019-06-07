@@ -1,0 +1,48 @@
+package com.androidgames.tictactoe;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.ScrollView;
+
+public class LoginActivity extends AppCompatActivity {
+    private EditText etEmail, etPassword;
+    private Button btnLogin;
+    private ScrollView formLogin;
+    private ProgressBar pbLogin;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        etEmail = findViewById(R.id.editTextEmail);
+        etPassword = findViewById(R.id.editTextPassword);
+        btnLogin = findViewById(R.id.buttonLogin);
+        formLogin = findViewById(R.id.formLogin);
+        pbLogin = findViewById(R.id.progressBarLogin);
+
+        changeLoginFormVisibility(true);
+        eventos();
+    }
+
+    private void eventos() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = etEmail.getText().toString();
+                String password = etPassword.getText().toString();
+
+                changeLoginFormVisibility(false);
+            }
+        });
+    }
+
+    private void changeLoginFormVisibility(boolean showForm) {
+        pbLogin.setVisibility(showForm ? View.GONE : View.VISIBLE);
+        formLogin.setVisibility(showForm ? View.VISIBLE : View.GONE);
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- transición de elementos compartidos de tipo texto -->
+    <changeBounds />
+
+    <!-- transición de elementos compartidos de tipo imagen -->
+    <changeImageTransform />
+</transitionSet>
