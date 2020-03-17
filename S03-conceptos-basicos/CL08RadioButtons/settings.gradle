@@ -1,0 +1,2 @@
+rootProject.name='CL08RadioButtons'
+include ':app'

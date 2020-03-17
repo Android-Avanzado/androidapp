@@ -1,0 +1,2 @@
+rootProject.name='CL07Checkboxes'
+include ':app'

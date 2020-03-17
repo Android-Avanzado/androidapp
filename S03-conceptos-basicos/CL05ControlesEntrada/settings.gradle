@@ -1,0 +1,2 @@
+rootProject.name='CL05-ControlesEntrada'
+include ':app'

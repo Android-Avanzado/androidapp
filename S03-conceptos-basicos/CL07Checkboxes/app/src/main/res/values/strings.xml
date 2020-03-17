@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CL07Checkboxes</string>
+    <string name="checkbox_deporte">Deporte</string>
+    <string name="checkbox_videojuegos">Videojuegos</string>
+</resources>
