@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CL09EventoClick</string>
+    <string name="button_1">Botón 1</string>
+    <string name="textview_2">Texto 2</string>
+</resources>
